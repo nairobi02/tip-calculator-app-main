@@ -1,0 +1,342 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Space Mono", monospace;
+}
+
+input[type=number] {
+  font-family: "Space Mono", monospace;
+  -moz-appearance: textfield;
+}
+
+input[type=number]:focus {
+  outline-color: hsl(172deg, 67%, 45%);
+  background-color: hsl(189deg, 41%, 97%);
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  gap: 2ch;
+  background-color: hsl(185deg, 41%, 84%);
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__title {
+  font-size: 1.25rem;
+  color: hsl(183deg, 100%, 15%);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.home__title span {
+  letter-spacing: 0.4rem;
+  font-weight: 600;
+}
+.home__title span:nth-child(1)::after {
+  content: "\a";
+  white-space: pre;
+}
+.home__appcontainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: false;
+  max-width: 60%;
+  min-width: 60%;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 25px;
+  padding: 2rem;
+  gap: 1.5ch;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.home__appcontainer--inputpanel {
+  width: 50%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: none;
+  gap: 0.5ch;
+}
+.home__appcontainer--outputpanel {
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: false;
+  align-items: false;
+  width: 50%;
+  background-color: hsl(183deg, 100%, 15%);
+  padding: clamp(1rem, 1.5vw, 3rem);
+  gap: 2ch;
+  border-radius: 20px;
+}
+.home__appcontainer--outputpanel button.reset {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+  padding: 0.5rem;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: auto;
+}
+.home__appcontainer--inputpanel input[type=number]:where(:not(.custom)) {
+  width: 100%;
+  padding: 0.5rem clamp(0.5rem, 1.5vw, 1rem);
+  border-radius: 5px;
+  background-color: hsl(189deg, 41%, 97%);
+  border: none;
+  font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+@media (hover: hover) {
+  .home button.reset:hover {
+    background-color: hsl(185deg, 41%, 84%);
+    cursor: pointer;
+  }
+}
+.inputpanel__billsection label {
+  position: relative;
+}
+.inputpanel__billsection label::after {
+  content: "$";
+  position: absolute;
+  top: 140%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: hsl(183deg, 100%, 15%);
+  display: block;
+  font-weight: 400;
+  opacity: 0.5;
+  font-style: italic;
+  transform: scale(1.2);
+  background-color: hsl(189deg, 41%, 97%);
+}
+
+.inputpanel__billsection {
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.inputpanel__tipsection {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  gap: 0.5rem;
+}
+.inputpanel__tipsection input[type=radio] {
+  display: none;
+}
+.inputpanel__tipsection label {
+  background-color: hsl(183deg, 100%, 15%);
+  font-size: larger;
+  color: hsl(0deg, 0%, 100%);
+  flex-grow: 1;
+  padding: 0.65rem clamp(0.5rem, 1.5vw, 1rem);
+  flex-basis: 6rem;
+  text-align: center;
+  border: 1px solid hsl(183deg, 100%, 15%);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.1s ease-in-out;
+}
+.inputpanel__tipsection input[type=number].custom {
+  width: 0;
+  flex-basis: 6rem;
+  flex-grow: 1;
+  padding: 0.3rem;
+  border: none;
+  outline-color: hsl(172deg, 67%, 45%);
+  background-color: hsl(189deg, 41%, 97%);
+  text-align: right;
+  font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+  border-radius: 5px;
+  display: flex;
+  margin: auto 0;
+  padding: 0.4rem clamp(0.5rem, 1.5vw, 1rem);
+}
+.inputpanel__tipsection input[type=number].custom::-moz-placeholder {
+  font-size: large;
+}
+.inputpanel__tipsection input[type=number].custom:-ms-input-placeholder {
+  font-size: large;
+}
+.inputpanel__tipsection input[type=number].custom::placeholder {
+  font-size: large;
+}
+
+.noOfPeopleLab {
+  position: relative;
+}
+
+.noOfPeopleLab::after {
+  content: "";
+  position: absolute;
+  top: 140%;
+  left: 0.5rem;
+  font-size: 1.5rem;
+  color: hsl(183deg, 100%, 15%);
+  display: block;
+  font-weight: 400;
+  opacity: 0.75;
+  font-style: italic;
+  transform: scale(1.2);
+  background: url("http://www.w3.org/2000/svg") center contain/no-repeat;
+}
+
+input[type=radio]:checked + label,
+input[type=radio] + label:hover {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+  border: none;
+}
+
+input[type=radio] + label:hover {
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+.outputpanel__tipamount {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: hsl(0deg, 0%, 100%);
+}
+.outputpanel__totalamount {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: hsl(0deg, 0%, 100%);
+}
+.outputpanel__totalamount--no, .outputpanel__tipamount--no {
+  font-size: 2rem;
+  color: hsl(172deg, 67%, 45%);
+}
+
+:is(#nextline1, #nextline2) + span {
+  font-size: 12px;
+  color: hsl(186deg, 14%, 43%);
+  display: none;
+}
+
+:is(#nextline1, #nextline2) {
+  position: relative;
+}
+
+:is(#nextline1, #nextline2)::after {
+  content: "/ person";
+  white-space: pre;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  color: hsl(186deg, 14%, 43%);
+  font-size: small;
+}
+
+.totalamount--no,
+.tipamount--no {
+  font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+  .home {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .home__title {
+    margin-top: 25px;
+    transform: scale(1.2);
+  }
+  .home__appcontainer {
+    flex-direction: column;
+    height: 80%;
+    max-width: 100%;
+    margin-top: auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .home__appcontainer > * {
+    width: 100%;
+  }
+  .inputpanel__billsection {
+    width: 100%;
+  }
+  .inputpanel__tipsection input[type=number].custom {
+    flex-basis: 40%;
+  }
+  .inputpanel__tipsection > label {
+    flex-basis: 40%;
+  }
+  .inputpanel__tipsection > * {
+    min-height: 35px;
+  }
+  .home__appcontainer--outputpanel {
+    padding: 2rem;
+  }
+  .home button.reset {
+    padding: 0.75rem 0;
+  }
+  .home button.reset:active {
+    background-color: hsl(185deg, 41%, 84%);
+  }
+  .inputpanel__billsection label::after {
+    top: 150%;
+    transform: scale(2);
+  }
+}
+.noOfPeopleLab {
+  position: relative;
+}
+
+.noOfPeopleLab:after {
+  content: "";
+  background-image: url(/images/icon-person.svg);
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 150%;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  opacity: 0.4;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}/*# sourceMappingURL=styles.css.map */
