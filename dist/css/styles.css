@@ -157,7 +157,7 @@ input[type=number]:focus {
   color: hsl(0deg, 0%, 100%);
   flex-grow: 1;
   padding: 0.65rem clamp(0.5rem, 1.5vw, 1rem);
-  flex-basis: 6rem;
+  flex-basis: 8rem;
   text-align: center;
   border: 1px solid hsl(183deg, 100%, 15%);
   cursor: pointer;
@@ -166,7 +166,7 @@ input[type=number]:focus {
 }
 .inputpanel__tipsection input[type=number].custom {
   width: 0;
-  flex-basis: 6rem;
+  flex-basis: 8rem;
   flex-grow: 1;
   padding: 0.3rem;
   border: none;

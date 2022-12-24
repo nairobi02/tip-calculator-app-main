@@ -137,7 +137,7 @@ input[type="number"]:focus {
     color: $white;
     flex-grow: 1;
     padding: 0.65rem clamp(0.5rem, 1.5vw, 1rem);
-    flex-basis: 6rem;
+    flex-basis: 8rem;
     text-align: center;
     // border-radius: 50%;
     border: 1px solid $veryDarkCyan;
@@ -148,7 +148,7 @@ input[type="number"]:focus {
   }
   &__tipsection input[type="number"].custom {
     width: 0;
-    flex-basis: 6rem;
+    flex-basis: 8rem;
     flex-grow: 1;
     padding: 0.3rem;
     border: none;
