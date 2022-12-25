@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.scss">
+  <script src="../index.js" defer></script>
+  <title>SPLITTER</title>
+</head>
+
+<body>
+  <section class="home">
+    <div class="home__title">
+      <span class="home__title-line">SPLI</span>
+      <span class="home__title-line">TTER</span>
+    </div>
+    <div class="home__appcontainer">
+      <form class="home__appcontainer--inputpanel">
+        <div class="inputpanel__billsection">
+          <label for="bill">Bill</label>
+          <input type="number" placeholder="0" id="bill" required pattern="[1-9]">
+        </div>
+        <div>Select tip %</div>
+        <div class="inputpanel__tipsection">
+          <input type="radio" name="tipPercent" id="fivePercent" class="tip" value="5">
+          <label for="fivePercent">5%</label>
+
+          <input type="radio" name="tipPercent" id="tenPercent" class="tip" value="10">
+          <label for="tenPercent">10%</label>
+
+          <input type="radio" name="tipPercent" id="fifteenPercent" class="tip" value="15">
+          <label for="fifteenPercent">15%</label>
+
+          <input type="radio" name="tipPercent" id="twentyfivePercent" class="tip" value="25">
+          <label for="twentyfivePercent">25%</label>
+
+          <input type="radio" name="tipPercent" id="fiftyPercent" class="tip" value="50">
+          <label for="fiftyPercent">50%</label>
+          <input type="number" placeholder="Custom%" class="custom">
+        </div>
+        <div class="inputpanel__noofpeople">
+          <label for="noOfPeople" class="noOfPeopleLab">Number of People</label>
+          <input type="number" placeholder="1" id="noOfPeople" required>
+        </div>
+      </form>
+      <div class="home__appcontainer--outputpanel">
+        <div class="outputpanel__tipamount">
+          <div class="outputpanel__tipamount--tipinfo"><span id="nextline1">Tip Amount</span> <span>/ person</span>
+          </div>
+          <div class="outputpanel__tipamount--no"><span>$</span><span class="tipamount--no">0.00</span></div>
+        </div>
+        <div class="outputpanel__totalamount">
+          <div class="outputpanel__totalamount--totalinfo"><span id="nextline2">Total</span> <span>/ person</span></div>
+          <div class="outputpanel__totalamount--no"><span>$</span><span class="totalamount--no">0.00</span></div>
+        </div>
+        <button class="reset">RESET</button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
